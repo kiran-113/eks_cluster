@@ -1,0 +1,3 @@
+Ensure you already installed aws cli, if not install aws cli
+
+aws eks update-kubeconfig --name <clustername> --region <region>
