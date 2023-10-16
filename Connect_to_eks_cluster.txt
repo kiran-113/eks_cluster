@@ -1,3 +1,14 @@
 Ensure you already installed aws cli, if not install aws cli
 
-aws eks update-kubeconfig --name <clustername> --region <region>
+aws eks update-kubeconfig --name my-eks-cluster --region us-east-1
+
+kubectl get nodes
+
+kubectl get pods -A
+
+
+# intall kubernetes client in windows and also helm chat
+
+https://dev.to/aws-builders/monitoring-eks-cluster-with-prometheus-and-grafana-1kpb#:~:text=Configuring%20Prometheus
+
+kubectl get pods -n prometheus
