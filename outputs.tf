@@ -1,9 +1,9 @@
 output "cluster_id" {
-    value = module.eks.cluster_id
+  value = module.eks.cluster_id
 }
 
 output "cluster_endpoint" {
-    value = module.eks.cluster_endpoint
+  value = module.eks.cluster_endpoint
 }
 output "cluster_arn" {
   description = "The Amazon Resource Name (ARN) of the cluster"
@@ -15,8 +15,8 @@ output "cluster_iam_role_name" {
 }
 
 output "vpc_id" {
-  value =  module.vpc.vpc_id
-  
+  value = module.vpc.vpc_id
+
 }
 output "node_iam_arn" {
   description = "node arn "
@@ -27,9 +27,12 @@ output "worker_iam_role_name" {
 }
 
 output "eks_node_groups" {
-   value = module.eks.node_groups
+  value = module.eks.node_groups
 }
 output "cluster_version" {
   value = module.eks.cluster_version
 }
 
+output "nat_public_ips" {
+  value = module.vpc.nat_public_ips
+}
