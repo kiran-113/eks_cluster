@@ -8,6 +8,8 @@ kubectl get pods -A
 
 sample
 
+sample from console
+
 
 # intall kubernetes client in windows and also helm chat
 
