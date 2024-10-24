@@ -16,7 +16,7 @@ Terraform is a free and open-source infrastructure as code (IAC) that can help t
 
 In this tutorial, I will be going to create an AWS EKS cluster with the help of Terraform scripts.
 
-### Prerequisites:
+### Prerequisites: (Template )
 
 * AWS Account
 * Basic understanding of **AWS, Terraform & Kubernetes**

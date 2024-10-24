@@ -1,11 +1,12 @@
-Ensure you already installed aws cli, if not install aws cli
+Ensure you already installed aws cli, if not install aws cli.
 
+
+git test
 aws eks update-kubeconfig --name my-eks-cluster --region us-east-1
 
 kubectl get nodes
 
 kubectl get pods -A
-
 
 # intall kubernetes client in windows and also helm chat
 
