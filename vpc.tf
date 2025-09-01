@@ -1,24 +1,25 @@
-data "aws_availability_zones" "available" {}
-
 module "vpc" {
-  source             = "terraform-aws-modules/vpc/aws"
-  name               = "eks-vpc"
-  cidr               = "10.0.0.0/16"
-  azs                = data.aws_availability_zones.available.names
-  private_subnets    = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-  public_subnets     = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
-  enable_nat_gateway = true
-  single_nat_gateway = true
 
-  tags = {
-    "Name" = "eks-vpc"
-  }
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "~> 6.0.0"
+
+  name            = local.name
+  cidr            = local.vpc_cidr
+  azs             = local.azs
+  public_subnets  = local.public_subnets
+  private_subnets = local.private_subnets
+  intra_subnets   = local.intra_subnets
+
+  enable_nat_gateway = true
 
   public_subnet_tags = {
-    "Name" = "eks-vpc-public-subnet"
+    "kubernetes.io/role/elb"                      = 1
+    "kubernetes.io/cluster/${local.name}"         = "shared"
   }
 
   private_subnet_tags = {
-    "Name" = "eks-private-subnet"
+    "kubernetes.io/role/internal-elb"             = 1
+    "kubernetes.io/cluster/${local.name}"         = "shared"
   }
+
 }
